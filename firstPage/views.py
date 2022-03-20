@@ -3,6 +3,7 @@ from django.http import JsonResponse
 import joblib
 import json
 import pandas as pd 
+from django.core.files.storage import FileSystemStorage
 model=joblib.load('modelPipeline.pkl')
 # Create your views here.
 
@@ -16,4 +17,14 @@ def scoreJSON(request):
     return JsonResponse({'score':score})
 
 def scoreFile(request):
-    return JsonResponse({'score':1})
+    fileObj=request.FILES['filePath']
+    fs=FileSystemStorage()
+    filePathName=fs.save(fileObj.name,fileObj)
+    filePathName=fs.url(filePathName)
+    filePath='.'+filePathName
+    data=pd.read_csv(filePath)
+    score=model.predict_proba(data)[:,-1]
+    print(score)
+    scoreDict={ j:k for j,k in zip(data['Loan_ID'],score)}
+    print(scoreDict)
+    return JsonResponse({'score':scoreDict})

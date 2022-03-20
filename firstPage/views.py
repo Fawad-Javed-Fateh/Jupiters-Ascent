@@ -27,4 +27,5 @@ def scoreFile(request):
     print(score)
     scoreDict={ j:k for j,k in zip(data['Loan_ID'],score)}
     print(scoreDict)
+    print(scoreDict)
     return JsonResponse({'score':scoreDict})

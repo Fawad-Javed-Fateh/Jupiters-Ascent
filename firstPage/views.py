@@ -8,9 +8,9 @@ model=joblib.load('modelPipeline.pkl')
 
 def scoreJSON(request):
     print(request.body)
-    data=json.load(request.body)
+    data=json.loads(request.body)
     dataFrame=pd.DataFrame({'x':data}).transpose()
-    score=model.predict_probab(dataFrame)[:,-1][0]
+    score=model.predict_proba(dataFrame)[:,-1][0]
     score=float(score)
     print(score)
     return JsonResponse({'score':score})

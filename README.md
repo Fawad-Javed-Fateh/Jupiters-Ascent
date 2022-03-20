@@ -1,2 +1,2 @@
 # Jupiters-Ascent
-A loan probability predicted made on django and reactJS
+A loan probability predictor made on django and reactJS

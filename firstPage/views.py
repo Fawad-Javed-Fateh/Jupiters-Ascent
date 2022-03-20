@@ -26,5 +26,5 @@ def scoreFile(request):
     score=model.predict_proba(data)[:,-1]
     print(score)
     scoreDict={ j:k for j,k in zip(data['Loan_ID'],score)}
-    print(scoreDict)
+    
     return JsonResponse({'score':scoreDict})

@@ -22,38 +22,7 @@ function Singleuser()
             </div>
         </div>
     </div>
-    <div class="tm-nav-container-outer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">                    
-                    <nav class="navbar navbar-expand-lg" id="tm-main-nav">
-                        <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse"
-                            data-target="#navbar-nav" aria-controls="navbar-nav" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                            <span class="dark-blue-text"><i class="fas fa-bars"></i></span>
-                        </button>                    
-                        <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
-                            <ul class="navbar-nav ml-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link tm-nav-link" href="index.html">Home</a>
-                                </li>
-                                <li class="nav-item active">
-                                    <a class="nav-link tm-nav-link" href="#">Services <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link tm-nav-link" href="about.html">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link tm-nav-link" href="contact.html">Contact</a>
-                                </li>
-                            </ul>                        
-                        </div>                        
-                    </nav>                    
-                </div>
-            </div>
-        </div>
-    </div>
-
+   <Navbar/>
     <div class="container-fluid mt-7">
         <div class="row mb-6">
             <div class="col-lg-7 mb-lg-0 mb-5 pr-lg-5">
@@ -75,25 +44,7 @@ function Singleuser()
                 </section>
                 <section>
                     <h3 class="tm-title-gray mb-4">Professional Business Services</h3>
-                    <hr class="mb-5 tm-hr"/>
-                    <div class="tm-services-box mb-60">
-                        <img src="img/services-2.jpg" alt="Image" class="img-fluid tm-services-img/"/>
-                        <div>
-                            <h4 class="tm-text-primary mb-4">Maecenas molestie varius ipsum</h4>
-                            <p class="tm-strategy-text">Donec mauris eros, suscipit fermentum faucibus sagittis, dictum
-                                eget nulla. Duis maximus porttitor ornare. Maecenas blandit vestibulum massa at
-                                accumsan. Duis ultricies mi id justo porttitor, et sollicitudin justo vehicula.</p>
-                        </div>
-                    </div>
-                    <div class="tm-services-box mb-5">
-                        <img src="img/services-3.jpg" alt="Image" class="img-fluid tm-services-img"/>
-                        <div>
-                            <h4 class="tm-text-primary mb-4">Sed elementum justo in pulvinar</h4>
-                            <p class="tm-strategy-text">Sed non tellus vestibulum, tincidunt risus a, semper erat.
-                                Aliquam porta leo eget faucibus consectetur. Nam mauris felis, consectetur non cursus
-                                sit amet, pellentesque ac leo. Aliquam at dolor du velit scelerisque fringilla.</p>
-                        </div>
-                    </div>
+                    <JsonForm/>
                 </section>
             </div>
             <div class="col-lg-5">
@@ -149,25 +100,7 @@ function Singleuser()
         </div>
     </div>
 
-    <footer class="container-fluid">
-        <div class="row">
-            <p class="col-lg-9 col-md-8 mb-5 mb-md-0">
-                Copyright &copy; 2020 <span class="tm-text-primary">Business Oriented</span>
-                - designed by <a rel="nofollow" target="_parent" href="https://templatemo.com" class="tm-link-primary">TemplateMo</a>
-            </p>
-            <div class="col-lg-3 col-md-4 text-right">
-                <a rel="nofollow" target="_blank" href="https://fb.com/templatemo" class="tm-social-link">
-                    <i class="fab fa-facebook fa-2x tm-social-icon"></i>
-                </a>
-                <a href="https://twitter.com" class="tm-social-link">
-                    <i class="fab fa-twitter fa-2x tm-social-icon"></i>
-                </a>
-                <a href="https://linkedin.com" class="tm-social-link">
-                    <i class="fab fa-linkedin fa-2x tm-social-icon"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
+
 
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

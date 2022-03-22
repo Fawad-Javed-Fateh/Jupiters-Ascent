@@ -5,6 +5,7 @@ import { Component } from 'react';
 import JsonForm  from './form';
 import { Helmet } from 'react-helmet';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 
 function Navbar(){
@@ -21,7 +22,7 @@ function Navbar(){
                         <div className="collapse navbar-collapse tm-nav" id="navbar-nav">
                             <ul className="navbar-nav ml-auto">
                                 <li className="nav-item active">
-                                    <a className="nav-link tm-nav-link" href="/">Home <span className="sr-only"></span></a>
+                                    <a className="nav-link tm-nav-link" href="/">Home </a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link tm-nav-link" href="/singleuser">single user</a>

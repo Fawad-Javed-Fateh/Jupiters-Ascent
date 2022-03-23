@@ -11,7 +11,7 @@ class JsonForm extends Component{
         Gender:'Male',Married:'No',
         Dependents:0,Education:'Graduate',Self_Employed: 'No',
         ApplicantIncome:5489,	CoapplicantIncome:0,	LoanAmount:128,	Loan_Amount_Term:360,	Credit_History:1,	Property_Area:'Urban',
-        score:1};
+        score:"null"};
     
         this.handleChange=this.handleChange.bind(this)
         this.handleSubmit=this.handleSubmit.bind(this)
@@ -42,7 +42,7 @@ class JsonForm extends Component{
       <form onSubmit={this.handleSubmit}>
   <div class="form-group">
     <label for="formGroupExampleInput">Gender</label>
-    <input type="text" name='Gender' onChange={this.handleChange} value={this.state.Gender} class="form-control" id="formGroupExampleInput" placeholder="Example input"/>
+    <input className="text white" type="text" name='Gender' onChange={this.handleChange} value={this.state.Gender} class="form-control" id="formGroupExampleInput" placeholder="Example input"/>
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput2">Married</label>
@@ -85,9 +85,9 @@ class JsonForm extends Component{
     <label for="formGroupExampleInput2">Property Area</label>
     <input type="text"  name='Property_Area' onChange={this.handleChange} value={this.state.Property_Area} class="form-control" id="formGroupExampleInput2" placeholder="Another input"/>
   </div>
-  <input type='submit' value='submit'></input>
+  <input type='submit' value='submit' class="btn btn-secondary tm-btn-app-feature"></input>
 </form>
-<p>The probability score is {this.state.score}</p>
+<h2 >Our Model Predicted your loan application probabiity score as  {this.state.score}</h2>
   </div>
       )
     }

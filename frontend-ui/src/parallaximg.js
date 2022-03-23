@@ -2,6 +2,7 @@ import React from 'react';
 import { ParallaxBanner } from 'react-scroll-parallax';
 
 const Parallaximg =(props)=>{
+    
     return(
         <ParallaxBanner
         layers={[{image:props.imgsrc,amount:0.6}]}

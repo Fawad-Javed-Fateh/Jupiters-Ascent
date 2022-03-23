@@ -8,6 +8,10 @@ import Navbar from './navbar';
 import Singleuser from './singleuser';
 import Batchuser from './batchuser';
 import Hogwash from './hogwash';
+import axios from 'axios';
+
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 function App() {
   return (
     <div className="App">

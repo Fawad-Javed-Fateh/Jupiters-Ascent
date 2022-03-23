@@ -16,7 +16,7 @@ function Singleuser()
     return(
         <>
         <BrowserView>
-        <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg-01.jpg">
+        <div class="parallax-window" data-parallax="scroll" data-image-src={require('./img/bg-01.jpg')}>
       <div class="container-fluid">
         <div class="row tm-brand-row">
           <div class="col-lg-4 col-11">
@@ -92,7 +92,7 @@ function Singleuser()
     </div>
     </BrowserView>
     <MobileView>
-    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg-01.jpg">
+    <div class="parallax-window" data-parallax="scroll" data-image-src={require('./img/bg-01.jpg')}>
       <div class="container-fluid">
         <div class="row tm-brand-row">
           <div class="col-lg-4 col-11">

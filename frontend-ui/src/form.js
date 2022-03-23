@@ -11,7 +11,7 @@ class JsonForm extends Component{
         Gender:'Male',Married:'No',
         Dependents:0,Education:'Graduate',Self_Employed: 'No',
         ApplicantIncome:5489,	CoapplicantIncome:0,	LoanAmount:128,	Loan_Amount_Term:360,	Credit_History:1,	Property_Area:'Urban',
-        score:1};
+        score:"null"};
     
         this.handleChange=this.handleChange.bind(this)
         this.handleSubmit=this.handleSubmit.bind(this)
@@ -87,7 +87,7 @@ class JsonForm extends Component{
   </div>
   <input type='submit' value='submit' class="btn btn-secondary tm-btn-app-feature"></input>
 </form>
-<p>Our Model Predicted your loan application probabiity score as  =  {this.state.score}</p>
+<h2 >Our Model Predicted your loan application probabiity score as  {this.state.score}</h2>
   </div>
       )
     }

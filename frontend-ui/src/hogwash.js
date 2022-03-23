@@ -40,7 +40,7 @@ function Hogwash(){
               <p className="text-white tm-home-text">
                 Jupiters Ascent is machine learning driven platform to predict the chances of your loan application being submitted based on key socio-economical data provided by you. 
               </p>
-              <a href="#tmFeatures" className="btn btn-primary">Learn More</a>
+              <a href="https://youtu.be/sqVARC8zTmY" className="btn btn-primary">Learn More</a>
             </div>
             <div className="tm-home-right">
               <img src="img/mobile-screen.png" alt="App on Mobile mockup" />

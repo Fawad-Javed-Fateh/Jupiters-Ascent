@@ -8,6 +8,7 @@ import img1 from './img/bg-01.jpg'
 import {ParallaxProvider} from 'react-scroll-parallax'
 import Parallaximg from './parallaximg';
 import {BrowserView, MobileView} from 'react-device-detect';
+import FormBatch from './batchform';
 
 
 
@@ -33,7 +34,8 @@ function Singleuser()
 
         <section class="row" id="tmAbout">
           <header class="col-12 tm-about-header">
-            <h2 class="text-uppercase text-center text-dark tm-about-page-title">How it works</h2>
+            <h2 class="text-uppercase text-center text-dark tm-about-page-title">BATCH USER</h2>
+            <h3 class="text-uppercase text-center text-white ">How it works</h3>
             <hr class="tm-about-title-hr"/>
           </header>
           <div class="col-lg-4">
@@ -73,7 +75,7 @@ function Singleuser()
         <div class="tm-bg-black-transparent tm-about-box">
                        
               <h3 class="tm-about-name">Input Form</h3>
-              <JsonForm/>
+              <FormBatch/>
               
             </div>
             </div>
@@ -108,7 +110,8 @@ function Singleuser()
 
         <section class="row" id="tmAbout">
           <header class="col-12 tm-about-header">
-            <h2 class="text-uppercase text-center text-dark tm-about-page-title">How it works</h2>
+          <h2 class="text-uppercase text-center text-dark tm-about-page-title">BATCH USER</h2>
+            <h3 class="text-uppercase text-center text-white ">How it works</h3>
             <hr class="tm-about-title-hr"/>
           </header>
           <div class="col-lg-4">

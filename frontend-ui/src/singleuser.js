@@ -33,7 +33,8 @@ function Singleuser()
 
         <section class="row" id="tmAbout">
           <header class="col-12 tm-about-header">
-            <h2 class="text-uppercase text-center text-dark tm-about-page-title">How it works</h2>
+          <h2 class="text-uppercase text-center text-dark tm-about-page-title">SINGLE USER</h2>
+            <h3 class="text-uppercase text-center text-white ">How it works</h3>
             <hr class="tm-about-title-hr"/>
           </header>
           <div class="col-lg-4">
@@ -108,7 +109,8 @@ function Singleuser()
 
         <section class="row" id="tmAbout">
           <header class="col-12 tm-about-header">
-            <h2 class="text-uppercase text-center text-dark tm-about-page-title">How it works</h2>
+          <h2 class="text-uppercase text-center text-dark tm-about-page-title">SINGLE USER</h2>
+            <h3 class="text-uppercase text-center text-white ">How it works</h3>
             <hr class="tm-about-title-hr"/>
           </header>
           <div class="col-lg-4">

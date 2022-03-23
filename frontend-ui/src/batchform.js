@@ -44,7 +44,7 @@ class FormBatch extends Component{
          
          );
   
-         finalTableData=<table class='table table-striped'>
+         finalTableData=<table class="table table-bordered table-dark">
            <tbody>
              <tr><th scope='col'>Id</th> <th scope='col'>Probability</th> </tr>
              {tableData}
@@ -52,7 +52,7 @@ class FormBatch extends Component{
          </table>
       }
       else{
-        finalTableData="No response";
+        finalTableData="";
       }
   
       return (

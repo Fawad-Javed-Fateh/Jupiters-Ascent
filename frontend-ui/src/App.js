@@ -6,15 +6,18 @@ import {BrowserRouter  as Router,Route,Routes} from 'react-router-dom'
 import Footer from './footer';
 import Navbar from './navbar';
 import Singleuser from './singleuser';
+import Batchuser from './batchuser';
+import Hogwash from './hogwash';
 function App() {
   return (
     <div className="App">
      <Router>
        <Routes>
-         <Route path='/' element={<Home />}/>
+         <Route path='/' element={<Hogwash />}/>
          <Route path='/singleuser' element={<Singleuser/>}/>
+         <Route path='/batchuser' element={<Batchuser/>}/>
        </Routes>
-    <Footer/>
+      
      </Router>
      
     </div>

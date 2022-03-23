@@ -4,111 +4,168 @@ import { Component } from 'react';
 import JsonForm  from './form';
 import { Helmet } from 'react-helmet';
 import Navbar from './navbar';
+import img1 from './img/bg-01.jpg'
+import {ParallaxProvider} from 'react-scroll-parallax'
+import Parallaximg from './parallaximg';
+import {BrowserView, MobileView} from 'react-device-detect';
+
+
 
 function Singleuser()
 {
     return(
-        <div className='App'>
-            <body>
-    <div id="parallax-1" class="parallax-window" data-parallax="scroll" data-image-src="img/biz-oriented-header.jpg">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="tm-logo">
-                        <i class="fas fa-industry fa-5x mr-5"></i>
-                        <span class="text-uppercase tm-logo-text">Business Oriented</span>
-                    </div>
-                </div>
+        <>
+        <BrowserView>
+        <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg-01.jpg">
+      <div class="container-fluid">
+        <div class="row tm-brand-row">
+          <div class="col-lg-4 col-11">
+            <div class="tm-brand-container tm-bg-white-transparent">
+              <i class="fas fa-2x fa-pen tm-brand-icon"></i>
+              <div class="tm-brand-texts">
+                <h1 class="text-uppercase tm-brand-name">Jupiter's Ascent</h1>
+                <p class="small">A Machine Learning Driven Loan Probability Predictor</p>
+              </div>
             </div>
+          </div>
+         <Navbar/>
         </div>
-    </div>
-   <Navbar/>
-    <div class="container-fluid mt-7">
-        <div class="row mb-6">
-            <div class="col-lg-7 mb-lg-0 mb-5 pr-lg-5">
-                <section class="mb-10">
-                    <div>
-                        <h3 class="tm-title-gray mb-4">Our services for your business growth</h3>
-                        <hr class="mb-5 tm-hr"/>
-                        <p class="mb-5">This is another HTML page for services in Business Oriented Template. You are
-                            <span class="tm-text-primary">allowed</span> to use this CSS template for your business or
-                            personal website. You are <span class="tm-text-primary">NOT allowed</span> to re-distribute
-                            the template ZIP file on any template collection website.
-                            <a href="https://templatemo.com/contact" class="tm-text-primary-link">Contact us</a> for
-                            more information about this template.
-                        </p>
-                        <p class="mb-5">Nulla eget ipsum nec augue semper convallis non a lacus. Integer vel condimentum
-                            neque. Fusce sollicitudin arcu et tortor lobortis rhoncus. Morbi accumsan efficitur nunc, in
-                            faucibus velit pretium quis. Sed elementum auctor felis eu tristique.</p>
-                    </div>
-                </section>
-                <section>
-                    <h3 class="tm-title-gray mb-4">Professional Business Services</h3>
-                    <JsonForm/>
-                </section>
-            </div>
-            <div class="col-lg-5">
-                <img src="img/services-1.jpg" alt="Image" class="img-fluid"/>
-                <div class="tm-bg-gray-dark tm-box-2">
-                    <h4 class="tm-text-primary tm-h3 mb-4">Fusce sollicitudin arcu et tortor</h4>
-                    <p class="mb-5">Cras rhoncus tempor consequat. Donec convallis orci id scelerisque convallis. Suspendisse varius sapien mauris.</p>
-                    <p class="mb-5">Quisque accumsan lorem sed bibendum vehicula. Aenean gravida, nunc ac bibendum bibendum.</p>
-                    <p>Donec convallis orci id scelerisque convallis. Suspendisse varius sapien mauris. Proin accumsan.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="parallax-3" class="parallax-window parallax-window-2" data-parallax="scroll"
-        data-image-src="img/biz-oriented-footer-2.jpg">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="tm-overlay tm-bg-black-transparent p-5 ml-auto mr-0">
-                        <p class="mb-0 text-white">This is a parallax image background section. Text section box has 50% alpha on black color. Phasellus interdum lobortis ultrices. Cras nulla nulla, fermentum vel ligula in, mollis imperdiet ipsum.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="container-fluid mt-7 mb-6">
-        <div class="row">
-            <div class="col-xl-3 col-lg-6 px-xl-4 px-3">
-                <div class="tm-box-3 tm-bg-gray">
-                    <div class="text-center"><i class="fas fa-cloud-sun fa-3x mb-8 mt-4"></i></div>
-                    <p>Nam nulla purus, lobortis ac euismod non, tincidunt eget velit. Nullam bibendum tortor id consectetur auctor.</p>
-                </div>
+        <section class="row" id="tmAbout">
+          <header class="col-12 tm-about-header">
+            <h2 class="text-uppercase text-center text-dark tm-about-page-title">How it works</h2>
+            <hr class="tm-about-title-hr"/>
+          </header>
+          <div class="col-lg-4">
+            <div class="tm-bg-black-transparent tm-about-box">
+              <div class="tm-about-number-container">0.1</div>              
+              <h3 class="tm-about-name">Input Your Credentials</h3>
+              <p class="tm-about-description">
+                Fill the form given below with your accurate loan application data. Click Submit when done.
+              </p>
             </div>
-            <div class="col-xl-3 col-lg-6 px-xl-4 px-3">
-                <div class="tm-box-3 tm-bg-gray">
-                    <div class="text-center"><i class="fas fa-hiking fa-3x mb-8 mt-4"></i></div>
-                    <p>Nam nulla purus, lobortis ac euismod non, tincidunt eget velit. Nullam bibendum tortor id consectetur auctor.</p>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 px-xl-4 px-3">
-                <div class="tm-box-3 tm-bg-gray">
-                    <div class="text-center"><i class="fas fa-tree fa-3x mb-8 mt-4"></i></div>
-                    <p>Nam nulla purus, lobortis ac euismod non, tincidunt eget velit. Nullam bibendum tortor id consectetur auctor.</p>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 px-xl-4 px-3">
-                <div class="tm-box-3 tm-bg-gray">
-                    <div class="text-center"><i class="fas fa-campground fa-3x mb-8 mt-4"></i></div>
-                    <p>Nam nulla purus, lobortis ac euismod non, tincidunt eget velit. Nullam bibendum tortor id consectetur auctor.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+          </div>
 
+          <div class="col-lg-4">
+            <div class="tm-bg-black-transparent tm-about-box">
+              <div class="tm-about-number-container">0.2</div>              
+              <h3 class="tm-about-name">Processing</h3>
+              <p class="tm-about-description">
+                Your input form data is passed in the body of a POST request to the python data pipleine in the backend. The pipeline cleans and transforms the form data as required and then passes it as an input to the binary classifier which is trained on similar data.
+              </p>
+             
+            </div>
+          </div>
 
+          <div class="col-lg-4">
+            <div class="tm-bg-black-transparent tm-about-box">
+              <div class="tm-about-number-container">0.3</div>              
+              <h3 class="tm-about-name">Final Output</h3>
+              <p class="tm-about-description">
+                The backend sends the probability score in the body  response to the original POST request invoker . The probability score is then rendered on screen.
+              </p>
+              
+            </div>
+          </div>
+        </section>
 
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/parallax.min.js"></script>
-    <script src="js/tooplate-script.js"></script>
+        <div class="container h-100 d-flex justify-content-center">
+        <div class="tm-bg-black-transparent tm-about-box">
+                       
+              <h3 class="tm-about-name">Input Form</h3>
+              <JsonForm/>
+              
+            </div>
+            </div>
     
-</body>
+     
+
+
+      </div>
+       <footer className="row">
+          <p className="col-12 text-white text-center tm-copyright-text">
+            Copyright &copy; 2021 Jupiters Ascent. 
+            Designed by <a href="#" className="tm-copyright-link">Fawad J.Fateh</a>
+          </p>
+        </footer>
+    </div>
+    </BrowserView>
+    <MobileView>
+    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg-01.jpg">
+      <div class="container-fluid">
+        <div class="row tm-brand-row">
+          <div class="col-lg-4 col-11">
+            <div class="tm-brand-container tm-bg-white-transparent">
+              <i class="fas fa-2x fa-pen tm-brand-icon"></i>
+              <div class="tm-brand-texts">
+                <h1 class="text-uppercase tm-brand-name">Jupiter's Ascent</h1>
+                <p class="small">A Machine Learning Driven Loan Probability Predictor</p>
+              </div>
+            </div>
+          </div>
+         <Navbar/>
         </div>
+
+        <section class="row" id="tmAbout">
+          <header class="col-12 tm-about-header">
+            <h2 class="text-uppercase text-center text-dark tm-about-page-title">How it works</h2>
+            <hr class="tm-about-title-hr"/>
+          </header>
+          <div class="col-lg-4">
+            <div class="tm-bg-black-transparent tm-about-box">
+              <div class="tm-about-number-container">0.1</div>              
+              <h3 class="tm-about-name">Input Your Credentials</h3>
+              <p class="tm-about-description">
+                Fill the form given below with your accurate loan application data. Click Submit when done.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="tm-bg-black-transparent tm-about-box">
+              <div class="tm-about-number-container">0.2</div>              
+              <h3 class="tm-about-name">Processing</h3>
+              <p class="tm-about-description">
+                Your input form data is passed in the body of a POST request to the python data pipleine in the backend. The pipeline cleans and transforms the form data as required and then passes it as an input to the binary classifier which is trained on similar data.
+              </p>
+             
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="tm-bg-black-transparent tm-about-box">
+              <div class="tm-about-number-container">0.3</div>              
+              <h3 class="tm-about-name">Final Output</h3>
+              <p class="tm-about-description">
+                The backend sends the probability score in the body  response to the original POST request invoker . The probability score is then rendered on screen.
+              </p>
+             
+            </div>
+          </div>
+        </section>
+
+        
+        <div class="tm-bg-black-transparent tm-about-box">
+                       
+              <h3 class="tm-about-name">Input Form</h3>
+              <JsonForm/>
+              
+            </div>
+            
+    
+     
+
+
+      </div>
+       <footer className="row">
+          <p className="col-12 text-white text-center tm-copyright-text">
+            Copyright &copy; 2021 Jupiters Ascent. 
+            Designed by <a href="#" className="tm-copyright-link">Fawad J.Fateh</a>
+          </p>
+        </footer>
+    </div>
+    </MobileView>
+    </>
     )
 }
 export default Singleuser;

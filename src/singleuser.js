@@ -18,6 +18,9 @@ function Singleuser()
     return(
         <>
         <BrowserView>
+        <body>
+        <ParallaxProvider>
+        <Parallaximg imgsrc={img1} height='200vh' opacity='0.5'>
         <div class="parallax-window" data-parallax="scroll" data-image-src={require('./img/bg-01.jpg')}>
       <div class="container-fluid">
         <div class="row tm-brand-row">
@@ -93,8 +96,13 @@ function Singleuser()
           </p>
         </footer>
     </div>
+    </Parallaximg>
+    </ParallaxProvider>
+    </body>
     </BrowserView>
     <MobileView>
+      <ParallaxProvider>
+      <Parallaximg imgsrc={img1} height='400vh' opacity='0.5'>
     <div class="parallax-window" data-parallax="scroll" data-image-src={require('./img/bg-01.jpg')}>
       <div class="container-fluid">
         <div class="row tm-brand-row">
@@ -170,6 +178,8 @@ function Singleuser()
           </p>
         </footer>
     </div>
+    </Parallaximg>
+    </ParallaxProvider>
     </MobileView>
     </>
     )

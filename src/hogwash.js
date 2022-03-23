@@ -120,7 +120,8 @@ function Hogwash(){
         <div className="row tm-brand-row">
           <div className="col-lg-4 col-11">
             <div className="tm-brand-container tm-bg-white-transparent">
-              <i className="fas fa-2x fa-pen tm-brand-icon"></i>
+              {/* <i className="fas fa-2x fa-pen tm-brand-icon"></i> */}
+              <FontAwesomeIcon icon={faEdit} size={"4x"}/>
               <div className="tm-brand-texts">
                 <h1 className="text-uppercase tm-brand-name">Jupiter's Ascent</h1>
                 <p className="small">A Machine Learning Driven Loan Probability Predictor </p>

@@ -9,7 +9,7 @@ import {ParallaxProvider} from 'react-scroll-parallax'
 import Parallaximg from './parallaximg';
 import {BrowserView, MobileView} from 'react-device-detect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faHeadphones, faSatellite, faServer } from '@fortawesome/free-solid-svg-icons';
 
 function Hogwash(){
     return(
@@ -58,7 +58,8 @@ function Hogwash(){
             <h3 className="tm-feature-name">High Accuracy</h3>
             
             <div className="tm-feature-icon-container">
-                <i className="fas fa-3x fa-server"></i>
+                {/* <i className="fas fa-3x fa-server"></i> */}
+                <FontAwesomeIcon icon={faServer} size={"3x"}/>
             </div>
 
             <p className="text-center">Guaranteed accurate predictions thanks to our machine learning algorithms which ensure upto 90% validation Accuracy.</p>
@@ -70,7 +71,8 @@ function Hogwash(){
                 <h3 className="tm-feature-name">Fast Support</h3>
 
                 <div className="tm-feature-icon-container">
-                    <i className="fas fa-3x fa-headphones"></i>
+                    {/* <i className="fas fa-3x fa-headphones"></i> */}
+                    <FontAwesomeIcon icon={faHeadphones} size={"3x"}/>
                 </div>
                 <p className="text-center">Our Tech Support is available 24/7 to handle your queries and concerns.
                 </p>
@@ -82,7 +84,8 @@ function Hogwash(){
                 <h3 className="tm-feature-name">Express Reliability</h3>
 
                 <div className="tm-feature-icon-container">
-                    <i className="fas fa-3x fa-satellite-dish"></i>
+                    {/* <i className="fas fa-3x fa-satellite-dish"></i> */}
+                    <FontAwesomeIcon icon={faSatellite} size={"3x"}/>
                 </div>
                 <p className="text-center">Parameters for training the algorithm aggregated from datasets provided by top banking colgemorates such as SoftBank, JP Morgan, Wells Fargo etc.
                 </p>
@@ -155,7 +158,8 @@ function Hogwash(){
             <h3 className="tm-feature-name">High Accuracy</h3>
             
             <div className="tm-feature-icon-container">
-                <i className="fas fa-3x fa-server"></i>
+                {/* <i className="fas fa-3x fa-server"></i> */}
+                <FontAwesomeIcon icon={faServer} size={"3x"}/>
             </div>
 
             <p className="text-center">Guaranteed accurate predictions thanks to our machine learning algorithms which ensure upto 90% validation Accuracy.</p>
@@ -167,7 +171,8 @@ function Hogwash(){
                 <h3 className="tm-feature-name">Fast Support</h3>
 
                 <div className="tm-feature-icon-container">
-                    <i className="fas fa-3x fa-headphones"></i>
+                    {/* <i className="fas fa-3x fa-headphones"></i> */}
+                    <FontAwesomeIcon icon={faHeadphones} size={"3x"}/>
                 </div>
                 <p className="text-center">Our Tech Support is available 24/7 to handle your queries and concerns.
                 </p>
@@ -179,7 +184,8 @@ function Hogwash(){
                 <h3 className="tm-feature-name">Express Reliability</h3>
 
                 <div className="tm-feature-icon-container">
-                    <i className="fas fa-3x fa-satellite-dish"></i>
+                    {/* <i className="fas fa-3x fa-satellite-dish"></i> */}
+                    <FontAwesomeIcon icon={faSatellite} size={"3x"}/>
                 </div>
                 <p className="text-center">Parameters for training the algorithm aggregated from datasets provided by top banking colgemorates such as SoftBank, JP Morgan, Wells Fargo etc.
                 </p>

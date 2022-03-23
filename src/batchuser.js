@@ -22,7 +22,8 @@ function Singleuser()
         <div class="row tm-brand-row">
           <div class="col-lg-4 col-11">
             <div class="tm-brand-container tm-bg-white-transparent">
-              <i class="fas fa-2x fa-pen tm-brand-icon"></i>
+              {/* <i class="fas fa-2x fa-pen tm-brand-icon"></i> */}
+              {/* <img src="https://image.pngaaa.com/29/3703029-middle.png"/> */}
               <div class="tm-brand-texts">
                 <h1 class="text-uppercase tm-brand-name">Jupiter's Ascent</h1>
                 <p class="small">A Machine Learning Driven Loan Probability Predictor</p>
@@ -98,7 +99,7 @@ function Singleuser()
         <div class="row tm-brand-row">
           <div class="col-lg-4 col-11">
             <div class="tm-brand-container tm-bg-white-transparent">
-              <i class="fas fa-2x fa-pen tm-brand-icon"></i>
+              {/* <i class="fas fa-2x fa-pen tm-brand-icon"></i> */}
               <div class="tm-brand-texts">
                 <h1 class="text-uppercase tm-brand-name">Jupiter's Ascent</h1>
                 <p class="small">A Machine Learning Driven Loan Probability Predictor</p>

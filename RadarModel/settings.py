@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 
 import os
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -77,7 +79,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'RadarModel.wsgi.application'
 
-
+WHITENOISE_MIMETYPES = {
+    '.xsl': 'application/xml',
+    '.js' : 'application/javascript',
+    '.css' : 'application/css'
+    
+    }
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -123,7 +130,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/staticfiles/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT= os.path.join(BASE_DIR,'media')
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

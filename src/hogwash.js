@@ -43,7 +43,7 @@ function Hogwash(){
               <a href="https://youtu.be/sqVARC8zTmY" className="btn btn-primary">Learn More</a>
             </div>
             <div className="tm-home-right">
-              <img src="./img/mobile-screen.png" alt="App on Mobile mockup" />
+              <img src={require('./img/mobile-screen.png')} alt="App on Mobile mockup" />
             </div>
           </div>
         </section>

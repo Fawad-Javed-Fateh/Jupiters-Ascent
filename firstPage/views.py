@@ -4,6 +4,7 @@ import joblib
 import json
 import pandas as pd 
 from django.core.files.storage import FileSystemStorage
+
 model=joblib.load('modelPipeline.pkl')
 # Create your views here.
 

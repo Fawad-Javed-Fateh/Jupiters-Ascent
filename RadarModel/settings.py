@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-f694)4!c%l4k2+nr*piaha!+exy1njb@xt=qe9gjfq#^pa*95_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://jupitersascent.herokuapp.com/', '127.0.0.1','localhost']
 
 
 # Application definition
@@ -53,7 +54,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 ROOT_URLCONF = 'RadarModel.urls'
 
 TEMPLATES = [
@@ -134,4 +135,6 @@ CORS_ORIGIN_ALLOW_ALL=True
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-ALLOWED_HOSTS = ['jupitersascent.com', '127.0.0.1:8000']
+
+import django_heroku
+django_heroku.settings(locals())

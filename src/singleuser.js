@@ -8,6 +8,8 @@ import img1 from './img/bg-01.jpg'
 import {ParallaxProvider} from 'react-scroll-parallax'
 import Parallaximg from './parallaximg';
 import {BrowserView, MobileView} from 'react-device-detect';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -21,7 +23,8 @@ function Singleuser()
         <div class="row tm-brand-row">
           <div class="col-lg-4 col-11">
             <div class="tm-brand-container tm-bg-white-transparent">
-              <i class="fas fa-2x fa-pen tm-brand-icon"></i>
+              {/* <i class="fas fa-2x fa-pen tm-brand-icon"></i> */}
+              <FontAwesomeIcon icon={faEdit} size={'4x'}/>
               <div class="tm-brand-texts">
                 <h1 class="text-uppercase tm-brand-name">Jupiter's Ascent</h1>
                 <p class="small">A Machine Learning Driven Loan Probability Predictor</p>
@@ -97,7 +100,8 @@ function Singleuser()
         <div class="row tm-brand-row">
           <div class="col-lg-4 col-11">
             <div class="tm-brand-container tm-bg-white-transparent">
-              <i class="fas fa-2x fa-pen tm-brand-icon"></i>
+              {/* <i class="fas fa-2x fa-pen tm-brand-icon"></i> */}
+              <FontAwesomeIcon icon={faEdit} size={'4x'}/>
               <div class="tm-brand-texts">
                 <h1 class="text-uppercase tm-brand-name">Jupiter's Ascent</h1>
                 <p class="small">A Machine Learning Driven Loan Probability Predictor</p>

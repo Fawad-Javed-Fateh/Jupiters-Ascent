@@ -13,13 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from re import template
 from django.contrib import admin
 from django.urls import path
 from firstPage import views
-from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_exempt,re_path
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('scoreJSON',csrf_exempt(views.scoreJSON),name='Score Application'),
     path('scoreFile',csrf_exempt(views.scoreFile),name='Score File'),
+    re_path('*',TemplateView.as_view(template_name='index.html') )
 ]

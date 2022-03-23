@@ -151,7 +151,7 @@ function Singleuser()
         <div class="tm-bg-black-transparent tm-about-box">
                        
               <h3 class="tm-about-name">Input Form</h3>
-              <JsonForm/>
+              <FormBatch/>
               
             </div>
             

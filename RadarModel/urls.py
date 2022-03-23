@@ -15,14 +15,14 @@ Including another URLconf
 """
 from re import template
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,re_path
 from firstPage import views
-from django.views.decorators.csrf import csrf_exempt,re_path
+from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('scoreJSON',csrf_exempt(views.scoreJSON),name='Score Application'),
     path('scoreFile',csrf_exempt(views.scoreFile),name='Score File'),
-    re_path('*',TemplateView.as_view(template_name='index.html') )
+    re_path('.*',TemplateView.as_view(template_name='index.html') )
 ]

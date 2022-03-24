@@ -44,7 +44,31 @@ a:hover {
 .container-fluid {
   max-width: 1310px;
 }
+.bg_image{
+  background-image: url('./bg-01.jpg');
+  background-size: cover;
+  height: 100vh;
+  color: #f5f5f5;
+}
 
+.baad{
+  background-image: url('./img/bg-01.jpg');
+  background-size: cover;
+  height: 360vh;
+  color: #f5f5f5;
+}
+.baadBatch{
+  background-image: url('./img/bg-01.jpg');
+  background-size: cover;
+  height: 360vh;
+  color: #f5f5f5;
+}
+.baam{
+  background-image: url('./img/bg-01.jpg');
+  background-size: cover;
+  height: 390vh;
+  color: #f5f5f5;
+}
 .small,
 small {
   font-size: 90%;

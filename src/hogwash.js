@@ -105,6 +105,8 @@ function Hogwash(){
       </div>
       
     </div>
+
+      
         </Parallaximg>
         </ParallaxProvider>
     

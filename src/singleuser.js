@@ -11,6 +11,7 @@ import Parallaximg from './parallaximg';
 import {BrowserView, MobileView} from 'react-device-detect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import Footer from './footer';
 
 
 
@@ -85,12 +86,7 @@ function Singleuser()
             </div>
         </div>
       </div>
-       <footer className="row">
-          <p classNameName="col-12 text-white text-center tm-copyright-text">
-            Copyright &copy; 2021 Jupiters Ascent. 
-            Designed by <a href="#" classNameName="tm-copyright-link">Fawad J.Fateh</a>
-          </p>
-        </footer>
+      <Footer/>
     </div>
     </div>
 
@@ -173,12 +169,7 @@ function Singleuser()
 
 
       </div>
-       <footer classNameName="row">
-          <p classNameName="col-12 text-white text-center tm-copyright-text">
-            Copyright &copy; 2021 Jupiters Ascent. 
-            Designed by <a href="#" classNameName="tm-copyright-link">Fawad J.Fateh</a>
-          </p>
-        </footer>
+       <Footer/>
     </div>
     </div>
     </MobileView>

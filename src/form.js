@@ -5,38 +5,40 @@ import { Component } from 'react';
 
 
 class JsonForm extends Component{
-    constructor(props){
+    constructor(props){ /* This function basically makes sure that form is rendered with dummy data as soon as the single user page is requested*/ 
         super(props)
+        /* Setting current state as an object of required variables*/
         this.state={
         Gender:'Male',Married:'No',
         Dependents:0,Education:'Graduate',Self_Employed: 'No',
         ApplicantIncome:5489,	CoapplicantIncome:0,	LoanAmount:128,	Loan_Amount_Term:360,	Credit_History:1,	Property_Area:'Urban',
         score:"null"};
-    
+        /*These two lines bind the handleChange and handleSubmit hook to the state variable */  
         this.handleChange=this.handleChange.bind(this)
         this.handleSubmit=this.handleSubmit.bind(this)
     }
 
     handleChange(event){
+      /*This hook function ensures that the page is rendered properly whenever the user changes any field in the form */
         this.setState({[event.target.name]:event.target.value})
     }
     handleSubmit(event){
-      event.preventDefault()
-     
-      const url="http://localhost:8000/scoreJSON";
-      const bodyData=JSON.stringify({"Gender":this.state.Gender,"Property_Area":this.state.Property_Area,
+      /*This hook function handles the sending of the form data to the machine learning model at the backend */
+      event.preventDefault()/* This function cancels the submit  event if user prompts a refresh or reloads the page */
+      const url="http://localhost:8000/scoreJSON";/* The url to which send a POST request */
+      const bodyData=JSON.stringify({"Gender":this.state.Gender,"Property_Area":this.state.Property_Area, /*This function bascially converts state variable which contains the form data the user entered into JSON format*/
       "Married":this.state.Married,"Dependents":this.state.Dependents,
       "Education":this.state.Education,"Self_Employed":this.state.Self_Employed,
       "ApplicantIncome":this.state.ApplicantIncome,"Credit_History":this.state.Credit_History,
       "CoapplicantIncome":this.state.CoapplicantIncome,"LoanAmount":this.state.LoanAmount,
       "Loan_Amount_Term":this.state.Loan_Amount_Term});
-      const reqOpt ={method:"POST",headers:{"Content-type":"application/json"},body:bodyData};
-        fetch(url,reqOpt)
-        .then((resp) => resp.json())
-        .then((respJ) => this.setState({score:respJ.score}))
+      const reqOpt ={method:"POST",headers:{"Content-type":"application/json"},body:bodyData};/*Creating the header of the post request */
+        fetch(url,reqOpt)/*This function sets a Json Post request to the url mentioned above whilst sending the converted JSON data in the request body  */
+        .then((resp) => resp.json()) /*THis call back function fetches the response from the backend to the post request */
+        .then((respJ) => this.setState({score:respJ.score}))/*This callback function resets the state of the probabiity score variable from the data fetched from the backend */
     }
 
-    render(){
+    render(){/*This function is responsible for rendering the form component itself  */
       return(
         <div>
       <form onSubmit={this.handleSubmit}>

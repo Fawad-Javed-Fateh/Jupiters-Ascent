@@ -11,6 +11,7 @@ import {BrowserView, MobileView} from 'react-device-detect';
 import FormBatch from './batchform';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Footer from './footer';
 
 
 
@@ -79,7 +80,7 @@ function Singleuser()
         <div class="container h-100 d-flex justify-content-center">
         <div class="tm-bg-black-transparent tm-about-box">
                        
-              <h3 class="tm-about-name">Input Form</h3>
+              <h3 class="tm-about-name">Input File</h3>
               <FormBatch/>
               
             </div>
@@ -89,12 +90,7 @@ function Singleuser()
 
 
       </div>
-       <footer className="row">
-          <p className="col-12 text-white text-center tm-copyright-text">
-            Copyright &copy; 2021 Jupiters Ascent. 
-            Designed by <a href="#" className="tm-copyright-link">Fawad J.Fateh</a>
-          </p>
-        </footer>
+      <Footer/>
     </div>
     </div>
     </BrowserView>
@@ -169,12 +165,7 @@ function Singleuser()
 
 
       </div>
-       <footer className="row">
-          <p className="col-12 text-white text-center tm-copyright-text">
-            Copyright &copy; 2021 Jupiters Ascent. 
-            Designed by <a href="#" className="tm-copyright-link">Fawad J.Fateh</a>
-          </p>
-        </footer>
+       <Footer/>
     </div>
     </Parallaximg>
     </ParallaxProvider>

@@ -1,15 +1,19 @@
 import './App.css';
 import { Component } from 'react';
 
+/*const fs=require('fs')*/
+const csv=require('csvtojson')
+const {Parser}=require('json2csv')
+
 class FormBatch extends Component{
     constructor(props){ /*This constructor sets a state variable object and binds it with the handleFile and handleUpload Hooks */
       super(props);
-      this.state = {selectFile:null,output:false,respFromServer:null};
+      this.state = {selectFile:null,output:false,respFromServer:null,selectedID:null,success:null};
 
       this.handleFile = this.handleFile.bind(this);
       this.handleUpload = this.handleUpload.bind(this);
-      console.log(this.handleFile)
-      console.log(this.handleUpload)
+      this.handleSelection=this.handleSelection.bind(this);
+
     }
   
     handleFile(event){/*This function handles the uploading stage of files  */
@@ -34,6 +38,20 @@ class FormBatch extends Component{
       this.setState({output:true});/*Render the result table when this output state is true (sets the output state to true when JSON data from backend is fetched) */
   
     }
+    handleSelection(event){
+      console.log("this is stupid")
+      this.setState({selectedID:event.target.innerText})
+      console.log(this.state.selectedID)
+      console.log(this.state.selectFile)
+      const url="http://localhost:8000/saveSelected"
+      var formdata = new FormData()
+      formdata.append(this.state.selectedID,this.state.selectFile.name)
+      const reqOpt={method:"POST",body:formdata}
+      fetch(url,reqOpt).then((resp)=>resp.json()).then((respJ) => this.setState({success:respJ.success}))
+        
+      }
+    
+
   
     render(){/*Renders the file submition component if checkpoint(output state ) is false and returns the output table if checkpoint is true   */
       
@@ -43,13 +61,13 @@ class FormBatch extends Component{
       if (checkPoint){
         /*If output state is true , it means that we have recieved a JSON response from the backend for the file we sent */
          const tableData = iterateData.map((x) => /*Map every row of the JSON response into a html table */
-         <tr><th scope='row'>{x[0]}</th><td>{x[1]}</td></tr>
+         <tr><th scope='row' onClick={this.handleSelection}>{x[0]}</th><td>{x[1]}</td></tr>
          
          );
   
          finalTableData=<table class="table table-bordered table-dark">
            <tbody>
-             <tr><th scope='col'>Id</th> <th scope='col'>Probability</th> </tr>
+             <tr><th scope='col' >Id</th> <th scope='col'>Probability</th> </tr>
              {tableData}
            </tbody>
          </table>

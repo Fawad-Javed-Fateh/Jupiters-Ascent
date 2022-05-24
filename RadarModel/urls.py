@@ -24,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('scoreJSON',csrf_exempt(views.scoreJSON),name='Score Application'),
     path('scoreFile',csrf_exempt(views.scoreFile),name='Score File'),
+    path('saveSelected',csrf_exempt(views.saveSelected),name='Save Selected'),
     re_path('.*',TemplateView.as_view(template_name='index.html'))
 ]

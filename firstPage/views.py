@@ -34,6 +34,7 @@ model=joblib.load('modelPipeline.pkl') #import model from pickle file
 
 def scoreJSON(request):
     data=json.loads(request.body) #load data from http request into a variable 
+    print('uuuu')
     print(data)
     dataFrame=pd.DataFrame({'x':data}).transpose()#convert data into a pandas dataframe
     score=model.predict_proba(dataFrame)[:,-1][0]#Send the required parameters to the predict_proba function of the model to get probability score 
@@ -41,9 +42,15 @@ def scoreJSON(request):
     print(score)
     return JsonResponse({'score':score})#return probabilty score as a JSON http response 
 
+def saveSelected(request):
+    data=request.body
+    print("here")
+    print(data)
+    return JsonResponse({'success':True})
 
 def scoreFile(request):
-    print(request)
+    #print(request)
+    print('pppp')
     print(request.body)
     fileObj=request.FILES['filePath']#fetch the uploaded file name from http request
     fs=FileSystemStorage()# initialise a file storage object
@@ -56,5 +63,6 @@ def scoreFile(request):
     score=model.predict_proba(data)[:,-1]# sending batch data of dataframe to the predict proba function to get probability scores  
     score={j:k for j,k in zip(data['Loan_ID'],score)}#concatenating loan ID and probaility score columns together 
     score =sorted(score.items(),key=lambda x: x[1],reverse=True)#sorting based on probabilty scores in descending order
-    print(score )
     return JsonResponse({'result':score})#returning the scores in a http JSON response 
+
+

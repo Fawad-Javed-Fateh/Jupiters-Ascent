@@ -43,15 +43,23 @@ def scoreJSON(request):
     return JsonResponse({'score':score})#return probabilty score as a JSON http response 
 
 def saveSelected(request):
-    data=request.body
+    data=json.loads(request.body)
     print("here")
-    print(data)
-    return JsonResponse({'success':True})
+    print(data['ID'])
+    dataframe=pd.read_csv('media/'+data['selectFile'])
+    print(dataframe.head())
+    selectedRow=dataframe[dataframe['Loan_ID']== data['ID']]
+    selectedRow = selectedRow.iloc[: , 0:]
+    with open('output/output.csv', 'a') as f:
+        selectedRow.to_csv(f, header=f.tell()==0)
+    jsonRow=selectedRow.to_json(orient='split')
+    print(jsonRow)
+    return JsonResponse({'rowData':jsonRow})
 
 def scoreFile(request):
     #print(request)
-    print('pppp')
-    print(request.body)
+    #print('pppp')
+    #print(request.body)
     fileObj=request.FILES['filePath']#fetch the uploaded file name from http request
     fs=FileSystemStorage()# initialise a file storage object
     ### The next three lines basically resolve the file name from url and http request body and fetches it from the media folder on the server
@@ -63,6 +71,7 @@ def scoreFile(request):
     score=model.predict_proba(data)[:,-1]# sending batch data of dataframe to the predict proba function to get probability scores  
     score={j:k for j,k in zip(data['Loan_ID'],score)}#concatenating loan ID and probaility score columns together 
     score =sorted(score.items(),key=lambda x: x[1],reverse=True)#sorting based on probabilty scores in descending order
+
     return JsonResponse({'result':score})#returning the scores in a http JSON response 
 
 

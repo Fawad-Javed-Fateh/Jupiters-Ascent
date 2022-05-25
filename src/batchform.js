@@ -1,5 +1,7 @@
 import './App.css';
 import { Component } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 /*const fs=require('fs')*/
 const csv=require('csvtojson')
@@ -8,12 +10,23 @@ const {Parser}=require('json2csv')
 class FormBatch extends Component{
     constructor(props){ /*This constructor sets a state variable object and binds it with the handleFile and handleUpload Hooks */
       super(props);
-      this.state = {selectFile:null,output:false,respFromServer:null,selectedID:null,success:null};
+      this.state = {selectFile:null,output:false,respFromServer:null,selectedID:null,rowData:null};
 
       this.handleFile = this.handleFile.bind(this);
       this.handleUpload = this.handleUpload.bind(this);
       this.handleSelection=this.handleSelection.bind(this);
+      this.notify=this.notify.bind(this);
 
+    }
+    notify(){
+      console.log(typeof(this.state.rowData))
+      console.log("hreerer")
+      console.log(this.state.rowData.data[0][0])
+      var ist=this.state.rowData.data[0][0]
+      var ist1=this.state.rowData.data[0][1]
+      var ist2 =this.state.rowData.data[0][2]
+      var ist3 =this.state.rowData.data[0][3]
+      toast.success(ist+': "'+ ist1 + ' '+ ist2 +' '+ist3+'" '+'Has been saved successfully to output.csv',{position: toast.POSITION.TOP_CENTER})
     }
   
     handleFile(event){/*This function handles the uploading stage of files  */
@@ -38,16 +51,41 @@ class FormBatch extends Component{
       this.setState({output:true});/*Render the result table when this output state is true (sets the output state to true when JSON data from backend is fetched) */
   
     }
-    handleSelection(event){
+    handleSelection =async event=>{
       console.log("this is stupid")
-      this.setState({selectedID:event.target.innerText})
+      console.log(event.target)
+      console.log(event.target.innerText)
+      const id=event.target.innerText
+      console.log('id = '+ id)
+      await this.setState({selectedID:id})
       console.log(this.state.selectedID)
       console.log(this.state.selectFile)
-      const url="http://localhost:8000/saveSelected"
-      var formdata = new FormData()
-      formdata.append(this.state.selectedID,this.state.selectFile.name)
-      const reqOpt={method:"POST",body:formdata}
-      fetch(url,reqOpt).then((resp)=>resp.json()).then((respJ) => this.setState({success:respJ.success}))
+      if(this.state.selectedID!=null)
+      {
+        const url="http://localhost:8000/saveSelected"
+        var formData=JSON.stringify({'ID':this.state.selectedID,'selectFile':this.state.selectFile.name})
+        console.log("Yt")
+        console.log(formData)
+        const reqOpt={method:"POST",headers:{"Content-type":"application/json"},body:formData}
+        /*fetch(url,reqOpt).then((resp)=>resp.json()).then((respJ) => this.setState({rowData:JSON.parse(respJ.rowData)}))*/
+        const resp=await fetch(url,reqOpt)
+        const resp2=await resp.json()
+        this.setState({rowData:JSON.parse(resp2.rowData)})
+        console.log('bara')
+        console.log('sata')
+        var updated=this.state.respFromServer
+        console.log(typeof(updated))
+        var newUpdate=[]
+        for(var o in updated){
+          if(updated[o][0]!=id){
+            newUpdate.push(updated[o])
+          }
+        }
+        await this.setState({respFromServer:newUpdate})
+        this.notify()
+      }
+     
+     
         
       }
     
@@ -66,6 +104,7 @@ class FormBatch extends Component{
          );
   
          finalTableData=<table class="table table-bordered table-dark">
+           <ToastContainer/>
            <tbody>
              <tr><th scope='col' >Id</th> <th scope='col'>Probability</th> </tr>
              {tableData}

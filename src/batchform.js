@@ -99,7 +99,8 @@ class FormBatch extends Component{
       if (checkPoint){
         /*If output state is true , it means that we have recieved a JSON response from the backend for the file we sent */
          const tableData = iterateData.map((x) => /*Map every row of the JSON response into a html table */
-         <tr><th scope='row' onClick={this.handleSelection}>{x[0]}</th><td>{x[1]}</td></tr>
+         <tr><th scope='row' onClick={this.handleSelection}  onMouseOver="this.style.color='#0F0'"
+         onMouseOut="this.style.color='#00F'">{x[0]}</th><td>{x[1]}</td></tr>
          
          );
   

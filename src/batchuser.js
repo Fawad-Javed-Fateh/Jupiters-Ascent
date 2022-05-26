@@ -15,8 +15,12 @@ import Footer from './footer';
 
 
 
-function Singleuser()
+function Singleuser()/*This function is responsible for rendering the batch user component */
 {
+  /*AUTHOR NAME: Usman Nizamani
+      DATE OF GENERATION: 15/5/2022
+      DATE OF LAST REVISION: 16/5/2022
+      VERSION: 1.1 */
     return(
         <>
         <BrowserView>

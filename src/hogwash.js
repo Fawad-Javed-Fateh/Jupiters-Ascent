@@ -11,7 +11,11 @@ import {BrowserView, MobileView} from 'react-device-detect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faHeadphones, faSatellite, faServer } from '@fortawesome/free-solid-svg-icons';
 import Footer from './footer';
-function Hogwash(){
+function Hogwash(){/*This function is responsible for rendering the home page  */
+  /*AUTHOR NAME: Usman Nizamani
+      DATE OF GENERATION: 15/5/2022
+      DATE OF LAST REVISION: 20/5/2022
+      VERSION: 3.1 */
     return(
         <>
         <BrowserView>

@@ -8,7 +8,11 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import { Link } from 'react-router-dom';
 
 
-function Navbar(){
+function Navbar(){/*This function is responsible for rendering the navbar component */
+      /*AUTHOR NAME: Usman Nizamani
+      DATE OF GENERATION: 15/5/2022
+      DATE OF LAST REVISION: 16/5/2022
+      VERSION: 1.1 */
     return(
         <div className="col-lg-8 col-1">
         <div className="tm-nav">

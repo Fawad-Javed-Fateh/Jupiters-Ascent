@@ -12,7 +12,11 @@ import axios from 'axios';
 
 axios.defaults.xsrfCookieName = 'csrftoken'
 axios.defaults.xsrfHeaderName = 'X-CSRFToken'
-function App() {
+function App() {/*This function is responsible for setting routing paths in the app */
+  /*AUTHOR NAME: Umer Ahmed
+      DATE OF GENERATION: 15/5/2022
+      DATE OF LAST REVISION: 15/5/2022
+      VERSION: 1.1 */
   return (
     <div className="App">
      <Router>

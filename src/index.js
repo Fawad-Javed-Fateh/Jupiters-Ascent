@@ -5,7 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 
-ReactDOM.render(
+ReactDOM.render(/*This function is responsible for injecting react JSX in the root component of the index.html file */
+  /**
+   AUTHOR NAME: Umer Ahmed
+      DATE OF GENERATION: 15/5/2022
+      DATE OF LAST REVISION: 15/5/2022
+      VERSION: 1.0
+   */
   <React.StrictMode>
     <App />
     

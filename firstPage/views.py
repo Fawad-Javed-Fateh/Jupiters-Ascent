@@ -22,6 +22,10 @@ import os
 class Assets(View):
 
     def get(self, _request, filename):
+      #AUTHOR NAME: Fawad J.Fateh
+      #DATE OF GENERATION: 15/5/2022
+      #DATE OF LAST REVISION: 15/5/2022
+      #VERSION: 1.1
         path = os.path.join(os.path.dirname(__file__), 'static', filename)
 
         if os.path.isfile(path):
@@ -29,10 +33,18 @@ class Assets(View):
                 return HttpResponse(file.read(), content_type='application/javascript')
         else:
             return HttpResponseNotFound()
+
+
+
+
 model=joblib.load('modelPipeline.pkl') #import model from pickle file 
 # Create your views here.
 
 def scoreJSON(request):
+    #AUTHOR NAME: Fawad J.Fateh
+    #DATE OF GENERATION: 15/5/2022
+    #DATE OF LAST REVISION: 18/5/2022
+    #VERSION: 2.1
     data=json.loads(request.body) #load data from http request into a variable 
     print('uuuu')
     print(data)
@@ -43,6 +55,10 @@ def scoreJSON(request):
     return JsonResponse({'score':score})#return probabilty score as a JSON http response 
 
 def saveSelected(request):
+    #AUTHOR NAME: Fawad J.Fateh
+    #DATE OF GENERATION: 25/5/2022
+    #DATE OF LAST REVISION: 25/5/2022
+    #VERSION: 1.1
     data=json.loads(request.body)
     print("here")
     print(data['ID'])
@@ -57,9 +73,10 @@ def saveSelected(request):
     return JsonResponse({'rowData':jsonRow})
 
 def scoreFile(request):
-    #print(request)
-    #print('pppp')
-    #print(request.body)
+    #AUTHOR NAME: Fawad J.Fateh
+    #DATE OF GENERATION: 15/5/2022
+    #DATE OF LAST REVISION: 19/5/2022
+    #VERSION: 2.1
     fileObj=request.FILES['filePath']#fetch the uploaded file name from http request
     fs=FileSystemStorage()# initialise a file storage object
     ### The next three lines basically resolve the file name from url and http request body and fetches it from the media folder on the server

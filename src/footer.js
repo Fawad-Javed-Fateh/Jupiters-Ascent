@@ -3,7 +3,10 @@ import './App.css';
 
 
 function Footer() /*This function is responsible for rendering the footer component */
-{
+{/*AUTHOR NAME: Umer Ahmed
+      DATE OF GENERATION: 15/5/2022
+      DATE OF LAST REVISION: 15/5/2022
+      VERSION: 1.1 */
     return(
         <div>
         <footer className="row">

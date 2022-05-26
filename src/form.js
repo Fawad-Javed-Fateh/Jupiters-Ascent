@@ -6,7 +6,11 @@ import { Component } from 'react';
 
 class JsonForm extends Component{
     constructor(props){ /* This function basically makes sure that form is rendered with dummy data as soon as the single user page is requested*/ 
-        super(props)
+      /*AUTHOR NAME: Fawad J.Fateh
+      DATE OF GENERATION: 22/5/2022
+      DATE OF LAST REVISION: 23/5/2022
+      VERSION: 1.1 */  
+      super(props)
         /* Setting current state as an object of required variables*/
         this.state={
         Gender:'Male',Married:'No',
@@ -20,10 +24,20 @@ class JsonForm extends Component{
 
     handleChange(event){
       /*This hook function ensures that the page is rendered properly whenever the user changes any field in the form */
+      /*AUTHOR NAME: Umer Ahmed
+      DATE OF GENERATION: 22/5/2022
+      DATE OF LAST REVISION: 23/5/2022
+      VERSION: 1.0
+       */
         this.setState({[event.target.name]:event.target.value})
     }
     handleSubmit(event){
       /*This hook function handles the sending of the form data to the machine learning model at the backend */
+      /*AUTHOR NAME: Fawad J.Fateh
+      DATE OF GENERATION: 22/5/2022
+      DATE OF LAST REVISION: 23/5/2022
+      VERSION: 1.1
+      DESCRIPTION: This hook function handles the sending of the form data to the machine learning model at the backend  */
       event.preventDefault()/* This function cancels the submit  event if user prompts a refresh or reloads the page */
       const url="http://localhost:8000/scoreJSON";/* The url to which send a POST request */
       const bodyData=JSON.stringify({"Gender":this.state.Gender,"Property_Area":this.state.Property_Area, /*This function bascially converts state variable which contains the form data the user entered into JSON format*/
@@ -38,7 +52,12 @@ class JsonForm extends Component{
         .then((respJ) => this.setState({score:respJ.score}))/*This callback function resets the state of the probabiity score variable from the data fetched from the backend */
     }
 
-    render(){/*This function is responsible for rendering the form component itself  */
+    render(){/*This function is responsible for rendering the form component itself  */ 
+     /*AUTHOR NAME: Usman Nizamani
+     DATE OF GENERATION: 22/5/2022
+     DATE OF LAST REVISION: 23/5/2022
+     VERSION NUMBER: 1.1 
+     DESCRIPTION:This function is responsible for rendering the form component itself  */
       return(
         <div>
       <form onSubmit={this.handleSubmit}>

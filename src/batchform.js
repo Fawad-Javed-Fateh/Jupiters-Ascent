@@ -9,7 +9,13 @@ const {Parser}=require('json2csv')
 
 class FormBatch extends Component{
     constructor(props){ /*This constructor sets a state variable object and binds it with the handleFile and handleUpload Hooks */
-      super(props);
+    /*AUTHOR NAME: Umer Ahmed
+      DATE OF GENERATION: 15/5/2022
+      DATE OF LAST REVISION: 20/5/2022
+      VERSION: 3.0
+     */ 
+    
+    super(props);
       this.state = {selectFile:null,output:false,respFromServer:null,selectedID:null,rowData:null};
 
       this.handleFile = this.handleFile.bind(this);
@@ -18,7 +24,11 @@ class FormBatch extends Component{
       this.notify=this.notify.bind(this);
 
     }
-    notify(){
+    notify(){/*This function renders a notification popup once the selected loanID is saved in the output file */
+      /*AUTHOR NAME: Fawad J.Fateh
+      DATE OF GENERATION: 25/5/2022
+      DATE OF LAST REVISION: 25/5/2022
+      VERSION: 1.1 */
       console.log(typeof(this.state.rowData))
       console.log("hreerer")
       console.log(this.state.rowData.data[0][0])
@@ -30,12 +40,20 @@ class FormBatch extends Component{
     }
   
     handleFile(event){/*This function handles the uploading stage of files  */
+    /*AUTHOR NAME: Umer Ahmed 
+      DATE OF GENERATION: 15/5/2022
+      DATE OF LAST REVISION: 20/5/2022
+      VERSION: 1.1 */
       console.log(event.target.value);
       this.setState({[event.target.name]:event.target.files[0]});/*This binds the file name to the current state */
   
     }
   
     handleUpload = async event =>{/* This function handles the sending of the file to the backend and getting the batch probability scroes back and rendering them  */
+      /*AUTHOR NAME: Umer Ahmed
+      DATE OF GENERATION: 20/5/2022
+      DATE OF LAST REVISION: 21/5/2022
+      VERSION: 1.1 */
       event.preventDefault();/* This function cancels the submit  event if user prompts a refresh or reloads the page */
       const url="http://localhost:8000/scoreFile"; /*Setting the url for the POST request  */
       const fileToSend = this.state.selectFile;/*This selects the current file in the current state variable */
@@ -52,7 +70,10 @@ class FormBatch extends Component{
   
     }
     handleSelection =async event=>{
-      console.log("this is stupid")
+      /*AUTHOR NAME: Fawad J.Fateh
+      DATE OF GENERATION: 25/5/2022
+      DATE OF LAST REVISION: 25/5/2022
+      VERSION: 1.1 */
       console.log(event.target)
       console.log(event.target.innerText)
       const id=event.target.innerText
@@ -92,7 +113,10 @@ class FormBatch extends Component{
 
   
     render(){/*Renders the file submition component if checkpoint(output state ) is false and returns the output table if checkpoint is true   */
-      
+      /* AUTHOR NAME: Usman Nizamani 
+      DATE OF GENERATION: 20/5/2022
+      DATE OF LAST REVISION: 20/5/2022
+      VERSION: 1.1 */
       const iterateData =this.state.respFromServer;/*This assigns the JSON response recieved from the backend to a local variable */
       const checkPoint = this.state.output;/*This assigns the output state to the local variable */
       let finalTableData;

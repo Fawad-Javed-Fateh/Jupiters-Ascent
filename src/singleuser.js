@@ -15,9 +15,15 @@ import Footer from './footer';
 
 
 
-function Singleuser()
+function Singleuser()/*This function is responsible for rendering the single user page */
 {
     return(
+      /*
+      AUTHOR NAME: Umer Ahmed 
+      DATE OF GENERATION: 20/5/2022
+      DATE OF LAST REVISION: 23/5/2022
+      VERSION: 2.1
+       */
 
       
         <>
